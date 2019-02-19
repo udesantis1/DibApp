@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SqlApp</string>
+    <string name="title_activity_register">register</string>
+    <string name="title_activity_post_login">PostLogin</string>
+    <string name="error_invalid_password">Error, incorrect password</string>
+    <string name="scan">Scan</string>
+</resources>
