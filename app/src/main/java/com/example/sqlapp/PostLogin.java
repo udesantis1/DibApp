@@ -1,5 +1,6 @@
 package com.example.sqlapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -22,6 +23,7 @@ import javax.xml.transform.Result;
 
 public class PostLogin extends AppCompatActivity implements View.OnClickListener {
 
+    Context context;
     private Button scanBtn;
     private TextView formatTxt, contentTxt;
 
@@ -49,8 +51,14 @@ public class PostLogin extends AppCompatActivity implements View.OnClickListener
         if (scanningResult != null) {
             String scanContent = scanningResult.getContents();
             String scanFormat = scanningResult.getFormatName();
+            if(scanContent.equals("Mobile")){
+                Intent intent1 = new Intent(PostLogin.this, PostQR.class);// replace  MainPage with the activity you want to start
+                startActivity(intent1);
+            }
+            else {
             formatTxt.setText("FORMAT: " + scanFormat);
             contentTxt.setText("CONTENT: " + scanContent);
+            }
         }
         else{
             Toast toast = Toast.makeText(getApplicationContext(),
